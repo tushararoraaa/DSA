@@ -1,4 +1,3 @@
-package com.day1;
 
 import java.util.Scanner;
 
@@ -7,15 +6,15 @@ public class isPrime {
         Scanner scn = new Scanner(System.in);
         int num = scn.nextInt();
         boolean isPrime = true;
-        for(int i = 2; i<num; i++){
-            if(num%i==0){
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) {
                 isPrime = false;
                 break;
             }
         }
-        if(isPrime){
+        if (isPrime) {
             System.out.println("It is prime number");
-        }else{
+        } else {
             System.out.println("OOPS! Not Prime");
         }
     }

@@ -1,4 +1,3 @@
-package com.day1;
 
 import java.util.Scanner;
 
@@ -15,7 +14,7 @@ public class gradingSystem {
             System.out.println("good");
         } else if (marks > 60 && marks <= 70) {
             System.out.println("good");
-        } else{
+        } else {
             System.out.println("below par");
         }
     }
