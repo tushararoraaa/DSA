@@ -6,12 +6,9 @@ public class printDigits {
 
     public static int count_digits(int n) {
         int count = 0;
-        for (int i = 1; i < Integer.MAX_VALUE; i = i * 10) {
-            if ((n / i) > 0) {
-                count++;
-            } else {
-                break;
-            }
+        while (n != 0) {
+            n /= 10;
+            count++;
         }
         return count;
     }
