@@ -4,7 +4,6 @@ public class Pattern7 {
 
     public static void Pattern(int n) {
         int nsp = n / 2;
-
         int nst = 1;
         for (int r = 1; r <= n; r++) {
             for (int csp = 1; csp <= nsp; csp++) {
