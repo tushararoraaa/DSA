@@ -54,7 +54,6 @@ public class DifferenceOfTwoArrays {
             for (int i = start; i < arr3.length; i++) {
                 System.out.println(arr3[i]);
             }
-
         }
 
     }
