@@ -4,11 +4,11 @@ public class FirstLastIndex {
 
     public static int firstIndex(int[] arr, int x) {
         int low = 0, high = arr.length - 1;
-        int FI = 0;
+        int fI = 0;
         while (low <= high) {
             int mid = (low + high) / 2;
             if (arr[mid] == x) {
-                FI = mid;
+                fI = mid;
                 high = mid - 1;
             } else if (x > arr[mid]) {
                 low = mid + 1;
@@ -16,7 +16,7 @@ public class FirstLastIndex {
                 high = mid - 1;
             }
         }
-        return FI;
+        return fI;
     }
 
     public static int lastIndex(int[] arr, int x) {
