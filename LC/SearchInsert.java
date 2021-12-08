@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class SearchInsert {
 
-    // 35 Arrays
+    // 35 Array
     public static int searchInsert(int[] arr, int target) {
         int low = 0;
         int high = arr.length - 1;
