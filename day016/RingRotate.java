@@ -23,6 +23,10 @@ public class RingRotate {
     }
 
     public static void ringRotate(int[][] arr, int s, int r) {
+
+        // 1) 2-D to 1-D Array
+        // 2) Rotate 1-D by 'r' times
+        // 3) Put Elements of 1-D into 2-D at their place
         int n = arr.length;
         int m = arr[0].length;
 
@@ -31,7 +35,7 @@ public class RingRotate {
         int minc = s - 1;
         int maxc = m - s;
 
-        int sizeOfArray = 2 * (maxr + maxc - minr - minc);
+        int sizeOfArray = 2 * (maxr + maxc - minr - minc); // 2-D to 1-D Array
         int[] ans = new int[sizeOfArray];
         int k = 0;
 
@@ -59,13 +63,13 @@ public class RingRotate {
         }
         minr++;
 
-        rotateArr(ans, r);
+        rotateArr(ans, r); // Rotate 1-D by 'r' times
 
         int minr2 = s - 1;
         int maxr2 = n - s;
         int minc2 = s - 1;
         int maxc2 = m - s;
-        int sizeOfArray2 = 2 * (maxr2 + maxc2 - minr2 - minc2);
+        // Put Elements of 1-D into 2-D at their place
         int t = 0;
         for (int i = minr2, j = minc2; i <= maxr2; i++) {
             arr[i][j] = ans[t];
