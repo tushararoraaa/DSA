@@ -16,7 +16,6 @@ public class PalindromicSubstrings {
             j--;
         }
         return true;
-
     }
 
     public static void palindromicSubstrings(String s) {
