@@ -20,15 +20,12 @@ public class GetKpc {
 
         int t = recAns.size();
         String from = map.get(ch);
-        System.out.println(from);
 
         for (int i = 0; i < from.length(); i++) {
             for (int j = 0; j < t; j++) {
                 result.add(from.charAt(i) + recAns.get(j));
             }
-
         }
-
         return result;
     }
 
