@@ -18,14 +18,6 @@ public class SmallerThanI {
 
     }
 
-    public static int[] smallerNumbersThanCurrent_improved(int[] arr) {
-        int[] res = new int[arr.length];
-        Arrays.sort(arr);
-        
-        return res;
-
-    }
-
     // 1365
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
@@ -39,9 +31,6 @@ public class SmallerThanI {
         for (int i = 0; i < res.length; i++) {
             System.out.print(res[i] + " ");
         }
-        int[] res2 = smallerNumbersThanCurrent_improved(arr);
-        for (int i = 0; i < res2.length; i++) {
-            System.out.print(res2[i] + " ");
-        }
+
     }
 }
