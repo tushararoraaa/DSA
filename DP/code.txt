@@ -1,0 +1,89 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+   static ArrayList<Integer> aL = new ArrayList<Integer>();
+    public static void shortestPath_helper(int[][] arr,int sr,int sc, int dr, int dc,String path,boolean[][] visited){
+        if(sc==dc){
+            aL.add(path.length());
+            return;
+        }
+        if( sr<0 || sr>dr || sc<0 || sc>dc||visited[sr][sc]==true || arr[sr][sc]==-1 || arr[sr][sc]==0){
+            return;
+        }
+        
+            visited[sr][sc] = true;
+            
+            shortestPath_helper(arr,sr-1,sc,dr,dc,path+"t",visited);
+            shortestPath_helper(arr,sr+1,sc,dr,dc,path+"b",visited);
+            shortestPath_helper(arr,sr,sc-1,dr,dc,path+"l",visited);
+            shortestPath_helper(arr,sr,sc+1,dr,dc,path+"r",visited);
+            
+            visited[sr][sc] = false;
+
+    }
+    public static void shortestPath(int[][] arr){
+        for(int i = 0; i<arr.length; i++){
+            if(arr[i][0]==-1){
+                continue;
+            }else{
+                shortestPath_helper(arr,i,0,arr.length-1,arr[0].length-1,"",new boolean[arr.length][arr[0].length]);
+            }
+                
+            
+            
+        }
+         
+    }
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int m = scn.nextInt();
+        int n = scn.nextInt();
+        int[][] arr = new int[m][n];
+        for(int i = 0; i<arr.length; i++){
+            for(int j = 0; j<arr[0].length; j++){
+                arr[i][j] = scn.nextInt();
+            }
+        }
+        
+        for(int i = 0; i<arr.length; i++){
+            for(int j = 0; j<arr[0].length; j++){
+                if(arr[i][j]==0){
+                    if(i != 0 ){
+                        arr[i-1][j] = -1; 
+                    }
+                    if(j != 0){
+                        arr[i][j-1] = -1;
+                        
+                    }
+                    if(i != arr.length-1){
+                        arr[i+1][j] = -1;
+                    }
+                     if(j != arr[0].length-1){
+                         arr[i][j+1] = -1;
+                     }
+                    
+                }
+            }
+        }
+        // for(int i = 0; i<arr.length; i++){
+        //     for(int j = 0; j<arr[0].length; j++){
+        //         System.out.print(arr[i][j]+"\t");
+        //     }
+        //     System.out.println();
+        // }
+        shortestPath(arr);
+        if(aL.isEmpty()){
+            System.out.print("soldier:KIA");
+        }else{
+            Collections.sort(aL);
+            System.out.print(aL.get(0));
+        }
+        
+        
+        
+        
+        
+    }
+}
